@@ -9,19 +9,39 @@
 }
 
 .task span {
-  color: var(--blue-500);
   cursor: pointer;
+  line-height: 0;
   transition: color 120ms ease-in-out;
 }
 
-.task span:hover {
+.taskNotDone span {
+  color: var(--blue-500);
+}
+
+.taskDone span {
+  color: var(--purple-700);
+}
+
+.taskNotDone span:hover {
   color: var(--blue-700);
+}
+
+.taskDone span:hover {
+  color: var(--purple-500);
 }
 
 .task p {
   font-size: 0.875rem;
-  color: var(--gray-100);
   line-height: 1.4;
+}
+
+.taskNotDone p {
+  color: var(--gray-100);
+}
+
+.taskDone p {
+  color: var(--gray-300);
+  text-decoration: line-through;
 }
 
 .task button {

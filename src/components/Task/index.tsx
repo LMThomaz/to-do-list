@@ -1,11 +1,24 @@
-import { Circle, Trash } from 'phosphor-react';
+import { CheckCircle, Circle, Trash } from 'phosphor-react';
+import classNames from 'classnames';
 import styles from './styles.module.css';
 
-export function Task() {
+interface Props {
+  done?: boolean;
+}
+
+export function Task({ done }: Props) {
   return (
-    <div className={styles.task}>
+    <div
+      className={classNames([styles.task], {
+        [styles.taskNotDone]: !done,
+        [styles.taskDone]: done,
+      })}>
       <span>
-        <Circle size={24} />
+        {done ? (
+          <CheckCircle size={24} weight='fill' colorInterpolation='white' />
+        ) : (
+          <Circle size={24} />
+        )}
       </span>
       <p>
         Integer urna interdum massa libero auctor neque turpis turpis semper.
