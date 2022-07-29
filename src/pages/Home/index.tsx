@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 interface Task {
   id: number;
   text: string;
-  done?: boolean;
+  done: boolean;
 }
 
 export function Home() {
@@ -24,6 +24,14 @@ export function Home() {
     };
     setTasks((oldState) => [...oldState, newTask]);
     setTextTask('');
+  }
+  function handleToggleDone(id: number) {
+    setTasks((oldState) =>
+      oldState.map((task) => {
+        if (task.id !== id) return task;
+        return { ...task, done: !task.done };
+      }),
+    );
   }
   const countTasks = tasks.length;
   const countTasksDone = tasks.filter((item) => item.done).length;
@@ -61,7 +69,7 @@ export function Home() {
             <ul>
               {tasks.map((task) => (
                 <li>
-                  <Task {...task} />
+                  <Task {...task} onToggleDone={handleToggleDone} />
                 </li>
               ))}
             </ul>

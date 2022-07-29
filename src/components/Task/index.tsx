@@ -5,10 +5,14 @@ import styles from './styles.module.css';
 interface Props {
   id: number;
   text: string;
-  done?: boolean;
+  done: boolean;
+  onToggleDone: (id: number) => void;
 }
 
-export function Task({ text, done }: Props) {
+export function Task({ id, text, done, onToggleDone }: Props) {
+  function handleToggleDone() {
+    onToggleDone(id);
+  }
   return (
     <div
       className={classNames([styles.task], {
@@ -17,9 +21,14 @@ export function Task({ text, done }: Props) {
       })}>
       <span>
         {done ? (
-          <CheckCircle size={24} weight='fill' colorInterpolation='white' />
+          <CheckCircle
+            onClick={handleToggleDone}
+            size={24}
+            weight='fill'
+            colorInterpolation='white'
+          />
         ) : (
-          <Circle size={24} />
+          <Circle onClick={handleToggleDone} size={24} />
         )}
       </span>
       <p>{text}</p>
