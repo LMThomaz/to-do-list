@@ -25,13 +25,16 @@ export function Home() {
     setTasks((oldState) => [...oldState, newTask]);
     setTextTask('');
   }
-  function handleToggleDone(id: number) {
+  function handleToggleDoneTask(id: number) {
     setTasks((oldState) =>
       oldState.map((task) => {
         if (task.id !== id) return task;
         return { ...task, done: !task.done };
       }),
     );
+  }
+  function handleRemoveTask(id: number) {
+    setTasks((oldState) => oldState.filter((task) => task.id !== id));
   }
   const countTasks = tasks.length;
   const countTasksDone = tasks.filter((item) => item.done).length;
@@ -69,7 +72,11 @@ export function Home() {
             <ul>
               {tasks.map((task) => (
                 <li>
-                  <Task {...task} onToggleDone={handleToggleDone} />
+                  <Task
+                    {...task}
+                    onToggleDone={handleToggleDoneTask}
+                    onRemove={handleRemoveTask}
+                  />
                 </li>
               ))}
             </ul>
