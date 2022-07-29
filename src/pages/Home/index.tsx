@@ -1,6 +1,8 @@
 import { ClipboardText, PlusCircle } from 'phosphor-react';
+import { EmptyTask } from '../../components/EmptyTask';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { Task } from '../../components/Task';
 import styles from './styles.module.css';
 
 export function Home() {
@@ -17,19 +19,17 @@ export function Home() {
         <div className={styles.content}>
           <header>
             <p>
-              Tarefas criadas <span>0</span>
+              Tarefas criadas <span>5</span>
             </p>
             <p className={styles.taskFinished}>
-              Concluídas <span>0</span>
+              Concluídas <span>2 de 5</span>
             </p>
           </header>
-          <div className={styles.emptyTaskWrapper}>
-            <ClipboardText size={56} weight='thin' />
-            <div>
-              <strong>Você ainda não tem tarefas cadastradas</strong>
-              <p>Crie tarefas e organize seus itens a fazer</p>
-            </div>
-          </div>
+          <ul>
+            <li>
+              <Task />
+            </li>
+          </ul>
         </div>
       </main>
     </div>
