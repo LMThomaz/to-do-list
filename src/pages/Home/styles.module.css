@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .home main {
@@ -37,7 +37,12 @@
   transition: background-color 120ms ease-in-out;
 }
 
-.home main form button:hover {
+.home main form button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.home main form button:not(:disabled):hover {
   background-color: var(--blue-500);
 }
 
@@ -47,11 +52,11 @@
 
 .content {
   margin-top: 4rem;
-  flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .content header {
@@ -77,4 +82,13 @@
   padding: 0.125rem 0.5rem;
   border-radius: 1rem;
   margin-left: 8px;
+}
+
+.content ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  flex: 1;
 }

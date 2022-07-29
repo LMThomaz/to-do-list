@@ -3,10 +3,12 @@ import classNames from 'classnames';
 import styles from './styles.module.css';
 
 interface Props {
+  id: number;
+  text: string;
   done?: boolean;
 }
 
-export function Task({ done }: Props) {
+export function Task({ text, done }: Props) {
   return (
     <div
       className={classNames([styles.task], {
@@ -20,10 +22,7 @@ export function Task({ done }: Props) {
           <Circle size={24} />
         )}
       </span>
-      <p>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
-      </p>
+      <p>{text}</p>
       <button>
         <Trash size={18} />
       </button>
