@@ -16,6 +16,11 @@
   --blue-700: #1e6f9f;
 }
 
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 1px var(--purple-700);
+}
+
 * {
   margin: 0;
   padding: 0;

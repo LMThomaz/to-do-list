@@ -1,0 +1,24 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home main {
+  width: 100%;
+  flex: 1;
+  margin-top: -1.75rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home main form {
+  max-width: 46rem;
+  width: 100%;
+  flex: 1;
+}
