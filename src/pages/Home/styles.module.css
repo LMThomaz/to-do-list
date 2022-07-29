@@ -34,6 +34,11 @@
   gap: 0.5rem;
   display: flex;
   align-items: center;
+  transition: background-color 120ms ease-in-out;
+}
+
+.home main form button:hover {
+  background-color: var(--blue-500);
 }
 
 .icon {

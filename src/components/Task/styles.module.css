@@ -10,6 +10,12 @@
 
 .task span {
   color: var(--blue-500);
+  cursor: pointer;
+  transition: color 120ms ease-in-out;
+}
+
+.task span:hover {
+  color: var(--blue-700);
 }
 
 .task p {
@@ -21,5 +27,18 @@
 .task button {
   background-color: transparent;
   border: none;
+  border-radius: 4px;
   color: var(--gray-300);
+  transition: color 120ms ease-in-out;
+  line-height: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task button:hover {
+  background-color: var(--gray-400);
+  color: var(--red-500);
 }

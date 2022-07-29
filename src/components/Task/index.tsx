@@ -12,7 +12,7 @@ export function Task() {
         Duis vel sed fames integer.
       </p>
       <button>
-        <Trash size={24} />
+        <Trash size={18} />
       </button>
     </div>
   );
